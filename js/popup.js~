@@ -1,0 +1,916 @@
+/*Config options for different retailers bot to be used for */
+
+var brandItems = [
+    {
+        name: '---',
+        value:'',
+    },
+    /*{
+        name: '24 Kilates',
+        value:'24Kilates',
+        subitems: [
+            {name: 'US 5.5', value:'(5.5)'},
+            {name: 'US 6', value:'(6)'},
+            {name: 'US 6.5', value:'(6.5)'},
+            {name: 'US 7', value:'(7)'},
+            {name: 'US 7.5', value:'(7.5)'},
+            {name: 'US 8', value:'(8)'},
+            {name: 'US 8.5', value:'(8.5)'},
+            {name: 'US 9', value:'(9)'},
+            {name: 'US 9.5', value:'(9.5)'},
+            {name: 'US 10', value:'(10)'},
+            {name: 'US 10.5', value:'(10.5)'},
+            {name: 'US 11', value:'(11)'},
+            {name: 'US 11.5', value:'(11.5)'},
+            {name: 'US 12', value:'(12)'},
+            {name: 'US 12.5', value:'(12.5)'},
+            {name: 'US 13', value:'(13)'},
+            {name: 'US 14', value:'(14)'},
+            {name: 'US 15', value:'(15)'}
+        ]
+    },
+    {
+        name: 'Adidas',
+        value:'Adidas',
+        subitems: [
+            {name: 'UK 3.5', value:'5.5'},
+            {name: 'US 4', value:'6'},
+            {name: 'US 4.5', value:'6.5'},
+            {name: 'US 5', value:'7'},
+            {name: 'US 5.5', value:'7.5'},
+            {name: 'US 6', value:'8'},
+            {name: 'US 6.5', value:'8.5'},
+            {name: 'US 7', value:'9'},
+            {name: 'US 7.5', value:'9.5'},
+            {name: 'US 8', value:'10'},
+            {name: 'US 8.5', value:'10.5'},
+            {name: 'US 9', value:'11'},
+            {name: 'US 9.5', value:'11.5'},
+            {name: 'US 10', value:'12'},
+            {name: 'US 10.5', value:'12.5'},
+            {name: 'US 11.5', value:'13'},
+            {name: 'US 12', value:'14'},
+            {name: 'US 12.5', value:'15'}
+        ]
+    },*/
+    {
+        name: 'Adidas',
+        value:'Adidas',
+        subitems: [
+            {name: 'Size 1', value:'1'},
+            {name: 'Size 1.5', value:'1.5'},
+            {name: 'Size 2', value:'2'},
+            {name: 'Size 2.5', value:'2.5'},
+            {name: 'Size 3', value:'3'},
+            {name: 'Size 3.5', value:'3.5'},
+            {name: 'Size 4', value:'4'},
+            {name: 'Size 4.5', value:'4.5'},
+            {name: 'Size 5', value:'5'},
+            {name: 'Size 5.5', value:'5.5'},
+            {name: 'Size 6', value:'6'},
+            {name: 'Size 6.5', value:'6.5'},
+            {name: 'Size 7', value:'7'},
+            {name: 'Size 7.5', value:'7.5'},
+            {name: 'Size 8', value:'8'},
+            {name: 'Size 8.5', value:'8.5'},
+            {name: 'Size 9', value:'9'},
+            {name: 'Size 9.5', value:'9.5'},
+            {name: 'Size 10', value:'10'},
+            {name: 'Size 10.5', value:'10.5'},
+            {name: 'Size 11', value:'11'},
+            {name: 'Size 11.5', value:'11.5'},
+            {name: 'Size 12', value:'12'},
+            {name: 'Size 12.5', value:'12.5'},
+            {name: 'Size 13', value:'13'},
+            {name: 'Size 13.5', value:'13.5'},
+            {name: 'Size 14', value:'14'},
+            {name: 'Size 14.5', value:'14.5'},
+            {name: 'Size 15', value:'15'},
+            {name: 'Size 16', value:'16'},
+            {name: 'Size 16.5', value:'16.5'},
+            {name: 'Size 17', value:'17'},
+            {name: 'Size 18', value:'18'},
+            {name: 'Size 19', value:'19'},
+            {name: 'Size 36', value:'36'},
+            {name: 'Size 36 1/3', value:'36 1/3'},
+            {name: 'Size 36 2/3', value:'36 2/3'},
+            {name: 'Size 37', value:'37'},
+            {name: 'Size 37 1/3', value:'37 1/3'},
+            {name: 'Size 37 2/3', value:'37 2/3'},
+            {name: 'Size 38', value:'38'},
+            {name: 'Size 38 1/3', value:'38 1/3'},
+            {name: 'Size 38 2/3', value:'38 2/3'},
+            {name: 'Size 39', value:'39'},
+            {name: 'Size 39 1/3', value:'39 1/3'},
+            {name: 'Size 39 2/3', value:'39 2/3'},
+            {name: 'Size 40', value:'40'},
+            {name: 'Size 40 1/3', value:'40 1/3'},
+            {name: 'Size 40 2/3', value:'40 2/3'},
+            {name: 'Size 41', value:'41'},
+            {name: 'Size 41 1/3', value:'41 1/3'},
+            {name: 'Size 41 2/3', value:'41 2/3'},
+            {name: 'Size 42', value:'42'},
+            {name: 'Size 42 1/3', value:'42 1/3'},
+            {name: 'Size 42 2/3', value:'42 2/3'},
+            {name: 'Size 43', value:'43'},
+            {name: 'Size 43 1/3', value:'43 1/3'},
+            {name: 'Size 43 2/3', value:'43 2/3'},
+            {name: 'Size 44', value:'44'},
+            {name: 'Size 44 1/3', value:'44 1/3'},
+            {name: 'Size 44 2/3', value:'44 2/3'},
+            {name: 'Size 45', value:'45'},
+            {name: 'Size 45 1/3', value:'45 1/3'},
+            {name: 'Size 45 2/3', value:'45 2/3'},
+            {name: 'Size 46', value:'46'},
+            {name: 'Size 46 1/3', value:'46 1/3'},
+            {name: 'Size 46 2/3', value:'46 2/3'},
+            {name: 'Size 47', value:'47'},
+            {name: 'Size 47 1/3', value:'47 1/3'},
+            {name: 'Size 47 2/3', value:'47 2/3'},
+            {name: 'Size 48', value:'48'},
+            {name: 'Size 48 1/3', value:'48 1/3'},
+            {name: 'Size 48 2/3', value:'48 2/3'},
+            {name: 'Size 49', value:'49'},
+            {name: 'Size 49 1/3', value:'49 1/3'},
+            {name: 'Size 49 2/3', value:'49 2/3'},
+            {name: 'Size 50', value:'50'},
+	    {name: 'Size 50.5', value:'50.5'}
+        ]
+    },
+    {
+        name: 'Bodega Store',
+        value:'Bodega',
+        subitems: [
+            {name: 'US 5.5', value:'5.5'},
+            {name: 'US 6', value:'6'},
+            {name: 'US 6.5', value:'6.5'},
+            {name: 'US 7', value:'7'},
+            {name: 'US 7.5', value:'7.5'},
+            {name: 'US 8', value:'8'},
+            {name: 'US 8.5', value:'8.5'},
+            {name: 'US 9', value:'9'},
+            {name: 'US 9.5', value:'9.5'},
+            {name: 'US 10', value:'10'},
+            {name: 'US 10.5', value:'10.5'},
+            {name: 'US 11', value:'11'},
+            {name: 'US 11.5', value:'11.5'},
+            {name: 'US 12', value:'12'},
+            {name: 'US 12.5', value:'12.5'},
+            {name: 'US 13', value:'13'},
+            {name: 'US 14', value:'14'},
+            {name: 'US 15', value:'15'}
+        ]
+    },
+    {
+        name: 'Concepts',
+        value:'Concepts',
+        subitems: [
+            {name: 'US 5.5', value:'5.5'},
+            {name: 'US 6', value:'6'},
+            {name: 'US 6.5', value:'6.5'},
+            {name: 'US 7', value:'7'},
+            {name: 'US 7.5', value:'7.5'},
+            {name: 'US 8', value:'8'},
+            {name: 'US 8.5', value:'8.5'},
+            {name: 'US 9', value:'9'},
+            {name: 'US 9.5', value:'9.5'},
+            {name: 'US 10', value:'10'},
+            {name: 'US 10.5', value:'10.5'},
+            {name: 'US 11', value:'11'},
+            {name: 'US 11.5', value:'11.5'},
+            {name: 'US 12', value:'12'},
+            {name: 'US 13', value:'13'},
+            {name: 'US 14', value:'14'}
+        ]
+    },
+    {
+        name: 'Crooked Tongues',
+        value:'CrookedTongues',
+        subitems: [
+            {name: 'UK 2.5', value:'UK 2.5'},
+            {name: 'UK 3', value:'UK 3'},
+            {name: 'UK 3.5', value:'UK 3.5'},
+            {name: 'UK 4', value:'UK 4'},
+            {name: 'UK 4.5', value:'UK 4.5'},
+            {name: 'UK 5', value:'UK 5'},
+            {name: 'UK 5.5', value:'UK 5.5'},
+            {name: 'UK 6', value:'UK 6'},
+            {name: 'UK 6.5', value:'UK 6.5'},
+            {name: 'UK 7', value:'UK 7'},
+            {name: 'UK 7.5', value:'UK 7.5'},
+            {name: 'UK 8', value:'UK 8'},
+            {name: 'UK 8.5', value:'UK 8.5'},
+            {name: 'UK 9', value:'UK 9'},
+            {name: 'UK 9.5', value:'UK 9.5'},
+            {name: 'UK 10', value:'UK 10'},
+            {name: 'UK 10.5', value:'UK 10.5'},
+            {name: 'UK 11', value:'UK 11'},
+            {name: 'UK 11.5', value:'UK 11.5'},
+            {name: 'UK 12', value:'UK 12'},
+            {name: 'UK 12.5', value:'UK 12.5'},
+            {name: 'UK 13', value:'UK 13'},
+            {name: 'UK 14', value:'UK 14'}
+        ]
+    },
+    {
+        name: 'End Clothing',
+        value:'End',
+        subitems: [
+            {name: 'UK 4', value:'UK 4'},
+            {name: 'UK 4.5', value:'UK 4.5'},
+            {name: 'UK 5', value:'UK 5'},
+            {name: 'UK 5.5', value:'UK 5.5'},
+            {name: 'UK 6', value:'UK 6'},
+            {name: 'UK 6.5', value:'UK 6.5'},
+            {name: 'UK 7', value:'UK 7'},
+            {name: 'UK 7.5', value:'UK 7.5'},
+            {name: 'UK 8', value:'UK 8'},
+            {name: 'UK 8.5', value:'UK 8.5'},
+            {name: 'UK 9', value:'UK 9'},
+            {name: 'UK 9.5', value:'UK 9.5'},
+            {name: 'UK 10', value:'UK 10'},
+            {name: 'UK 10.5', value:'UK 10.5'},
+            {name: 'UK 11', value:'UK 11'},
+            {name: 'UK 11.5', value:'UK 11.5'},
+            {name: 'UK 12', value:'UK 12'},
+            {name: 'UK 13', value:'UK 13'}
+        ]
+    },
+    {
+        name: 'Extra Butter',
+        value:'ExtraButter',
+        subitems: [
+            {name: 'US 6', value:'6'},
+            {name: 'US 6.5', value:'6.5'},
+            {name: 'US 7', value:'7'},
+            {name: 'US 7.5', value:'7.5'},
+            {name: 'US 8', value:'8'},
+            {name: 'US 8.5', value:'8.5'},
+            {name: 'US 9', value:'9'},
+            {name: 'US 9.5', value:'9.5'},
+            {name: 'US 10', value:'10'},
+            {name: 'US 10.5', value:'10.5'},
+            {name: 'US 11', value:'11'},
+            {name: 'US 11.5', value:'11.5'},
+            {name: 'US 12', value:'12'},
+            {name: 'US 13', value:'13'},
+            {name: 'US 14', value:'14'}
+        ]
+    },
+    {
+        name: 'Footlocker EU',
+        value:'FootlockerEU',
+        subitems: [
+            {name: 'UK 1.5', value:'1.5'},
+            {name: 'UK 2', value:'2'},
+            {name: 'UK 2.5', value:'2.5'},
+            {name: 'UK 3', value:'3'},
+            {name: 'UK 3.5', value:'3.5'},
+            {name: 'UK 4', value:'4'},
+            {name: 'UK 4.5', value:'4.5'},
+            {name: 'UK 5', value:'5'},
+            {name: 'UK 5.5', value:'5.5'},
+            {name: 'UK 6', value:'6'},
+            {name: 'UK 6.5', value:'6.5'},
+            {name: 'UK 7', value:'7'},
+            {name: 'UK 7.5', value:'7.5'},
+            {name: 'UK 8', value:'8'},
+            {name: 'UK 8.5', value:'8.5'},
+            {name: 'UK 9', value:'9'},
+            {name: 'UK 9.5', value:'9.5'},
+            {name: 'UK 10', value:'10'},
+            {name: 'UK 10.5', value:'10.5'},
+            {name: 'UK 11', value:'11'},
+            {name: 'UK 11.5', value:'11.5'},
+            {name: 'UK 12', value:'12'},
+            {name: 'UK 12.5', value:'12.5'},
+            {name: 'UK 13', value:'13'},
+            {name: 'UK 13.5', value:'13.5'},
+            {name: 'UK 14', value:'14'},
+            {name: 'UK 14.5', value:'14.5'},
+            {name: 'EU 34', value:'34'},
+            {name: 'EU 34.5', value:'34.5'},
+            {name: 'EU 35', value:'35'},
+            {name: 'EU 35.5', value:'35.5'},
+            {name: 'EU 36', value:'36'},
+            {name: 'EU 36.5', value:'36.5'},
+            {name: 'EU 36 1/3', value:'36 1/3'},
+            {name: 'EU 36 2/3', value:'36 2/3'},
+            {name: 'EU 37', value:'37'},
+            {name: 'EU 37.5', value:'37.5'},
+            {name: 'EU 37 1/3', value:'37 1/3'},
+            {name: 'EU 37 2/3', value:'37 2/3'},
+            {name: 'EU 38', value:'38'},
+            {name: 'EU 38.5', value:'38.5'},
+            {name: 'EU 38 1/3', value:'38 1/3'},
+            {name: 'EU 38 2/3', value:'38 2/3'},
+            {name: 'EU 39', value:'39'},
+            {name: 'EU 39.5', value:'39.5'},
+            {name: 'EU 39 1/3', value:'39 1/3'},
+            {name: 'EU 39 2/3', value:'39 2/3'},
+            {name: 'EU 40', value:'40'},
+            {name: 'EU 40.5', value:'40.5'},
+            {name: 'EU 40 1/3', value:'40 1/3'},
+            {name: 'EU 40 2/3', value:'40 2/3'},
+            {name: 'EU 41', value:'41'},
+            {name: 'EU 41.5', value:'41.5'},
+            {name: 'EU 41 1/3', value:'41 1/3'},
+            {name: 'EU 41 2/3', value:'41 2/3'},
+            {name: 'EU 42', value:'42'},
+            {name: 'EU 42.5', value:'42.5'},
+            {name: 'EU 42 1/3', value:'42 1/3'},
+            {name: 'EU 42 2/3', value:'42 2/3'},
+            {name: 'EU 43', value:'43'},
+            {name: 'EU 43.5', value:'43.5'},
+            {name: 'EU 43 1/3', value:'43 1/3'},
+            {name: 'EU 43 2/3', value:'43 2/3'},
+            {name: 'EU 44', value:'44'},
+            {name: 'EU 44.5', value:'44.5'},
+            {name: 'EU 44 1/3', value:'44 1/3'},
+            {name: 'EU 44 2/3', value:'44 2/3'},
+            {name: 'EU 45', value:'45'},
+            {name: 'EU 45.5', value:'45.5'},
+            {name: 'EU 45 1/3', value:'45 1/3'},
+            {name: 'EU 45 2/3', value:'45 2/3'},
+            {name: 'EU 46', value:'46'},
+            {name: 'EU 46.5', value:'46.5'},
+            {name: 'EU 46 1/3', value:'46 1/3'},
+            {name: 'EU 46 2/3', value:'46 2/3'},
+            {name: 'EU 47', value:'47'},
+            {name: 'EU 47.5', value:'47.5'},
+            {name: 'EU 48', value:'48'},
+            {name: 'EU 48.5', value:'48.5'},
+            {name: 'EU 49', value:'49'},
+            {name: 'EU 49.5', value:'49.5'},
+            {name: 'EU 50', value:'50'},
+            {name: 'EU 50.5', value:'50.5'}
+        ]
+    },
+    // {
+    //     name: 'Footlocker USA',
+    //     value:'FootlockerUSA',
+    //     subitems: [
+    //         {name: 'US 3', value:'03.0'},
+    //         {name: 'US 3.5', value:'03.5'},
+    //         {name: 'US 4', value:'04.0'},
+    //         {name: 'US 4.5', value:'04.5'},
+    //         {name: 'US 5', value:'05.0'},
+    //         {name: 'US 5.5', value:'05.5'},
+    //         {name: 'US 6', value:'06.0'},
+    //         {name: 'US 6.5', value:'06.5'},
+    //         {name: 'US 7', value:'07.0'},
+    //         {name: 'US 7.5', value:'07.5'},
+    //         {name: 'US 8', value:'08.0'},
+    //         {name: 'US 8.5', value:'08.5'},
+    //         {name: 'US 9', value:'09.0'},
+    //         {name: 'US 9.5', value:'09.5'},
+    //         {name: 'US 10', value:'10.0'},
+    //         {name: 'US 10.5', value:'10.5'},
+    //         {name: 'US 11', value:'11.0'},
+    //         {name: 'US 11.5', value:'11.5'},
+    //         {name: 'US 12', value:'12.0'},
+    //         {name: 'US 12.5', value:'12.5'},
+    //         {name: 'US 13', value:'13.0'},
+    //         {name: 'US 13.5', value:'13.5'},
+    //         {name: 'US 14', value:'14.0'},
+    //         {name: 'US 14.5', value:'14.5'},
+    //         {name: 'US 15', value:'15.0'},
+    //         {name: 'US 15.5', value:'15.5'},
+    //         {name: 'US 16', value:'16.0'},
+    //         {name: 'US 17', value:'17.0'},
+    //         {name: 'US 18', value:'18.0'},
+    //         {name: 'US 19', value:'19.0'},
+    //         {name: 'US 20', value:'20.0'}
+    //     ]
+    // },
+    {
+        name: 'Footpatrol',
+        value:'Footpatrol',
+        subitems: [
+            {name: 'UK 5', value:'5'},
+            {name: 'UK 5.5', value:'5.5'},
+            {name: 'UK 6', value:'6'},
+            {name: 'UK 6.5', value:'6.5'},
+            {name: 'UK 7', value:'7'},
+            {name: 'UK 7.5', value:'7.5'},
+            {name: 'UK 8', value:'8'},
+            {name: 'UK 8.5', value:'8.5'},
+            {name: 'UK 9', value:'9'},
+            {name: 'UK 9.5', value:'9.5'},
+            {name: 'UK 10', value:'10'},
+            {name: 'UK 10.5', value:'10.5'},
+            {name: 'UK 11', value:'11'},
+            {name: 'UK 11.5', value:'11.5'},
+            {name: 'UK 12', value:'12'},
+            {name: 'UK 12.5', value:'12.5'},
+            {name: 'UK 13', value:'13'},
+            {name: 'UK 14', value:'14'}
+        ]
+    },
+    {
+        name: 'Hanon Shop',
+        value:'Hanon',
+        subitems: [
+            {name: 'UK 3.5', value:'UK 3.5'},
+            {name: 'UK 4', value:'UK 4'},
+            {name: 'UK 4.5', value:'UK 4.5'},
+            {name: 'UK 4.5 (Womens)', value:'Womens UK 4.5'},
+            {name: 'UK 5', value:'UK 5'},
+            {name: 'UK 5.5', value:'UK 5.5'},
+            {name: 'UK 6', value:'UK 6'},
+            {name: 'UK 6.5', value:'UK 6.5'},
+            {name: 'UK 7', value:'UK 7'},
+            {name: 'UK 7.5', value:'UK 7.5'},
+            {name: 'UK 8', value:'UK 8'},
+            {name: 'UK 8.5', value:'UK 8.5'},
+            {name: 'UK 9', value:'UK 9'},
+            {name: 'UK 9.5', value:'UK 9.5'},
+            {name: 'UK 10', value:'UK 10'},
+            {name: 'UK 10.5', value:'UK 10.5'},
+            {name: 'UK 11', value:'UK 11'},
+            {name: 'UK 11.5', value:'UK 11.5'},
+            {name: 'UK 12', value:'UK 12'},
+            {name: 'UK 13', value:'UK 13'}
+        ]
+    },
+    {
+        name: 'JD Sports',
+        value:'JDSports',
+        subitems: [
+            {name: 'UK 3', value:'3'},
+            {name: 'UK 4', value:'4'},
+            {name: 'UK 5', value:'5'},
+            {name: 'UK 6', value:'6'},
+            {name: 'UK 6.5', value:'6.5'},
+            {name: 'UK 7', value:'7'},
+            {name: 'UK 7.5', value:'7.5'},
+            {name: 'UK 8', value:'8'},
+            {name: 'UK 8.5', value:'8.5'},
+            {name: 'UK 9', value:'9'},
+            {name: 'UK 9.5', value:'9.5'},
+            {name: 'UK 10', value:'10'},
+            {name: 'UK 10.5', value:'10.5'},
+            {name: 'UK 11', value:'11'},
+            {name: 'UK 11.5', value:'11.5'},
+            {name: 'UK 12', value:'12'},
+            {name: 'UK 12.5', value:'12.5'},
+            {name: 'UK 13', value:'13'},
+            {name: 'UK 13.5', value:'13.5'}
+        ]
+    },
+    {
+        name: 'KITH NYC',
+        value:'Kith',
+        subitems: [
+            {name: 'US 6', value:'6'},
+            {name: 'US 6.5', value:'6.5'},
+            {name: 'US 7', value:'7'},
+            {name: 'US 7.5', value:'7.5'},
+            {name: 'US 8', value:'8'},
+            {name: 'US 8.5', value:'8.5'},
+            {name: 'US 9', value:'9'},
+            {name: 'US 9.5', value:'9.5'},
+            {name: 'US 10', value:'10'},
+            {name: 'US 10.5', value:'10.5'},
+            {name: 'US 11', value:'11'},
+            {name: 'US 11.5', value:'11.5'},
+            {name: 'US 12', value:'12'},
+            {name: 'US 13', value:'13'},
+            {name: 'US 14', value:'14'}
+        ]
+    },
+    {
+        name: 'Nike UK/USA/EU',
+        value:'Nike',
+        subitems: [
+            {name: 'UK 2.5', value:'UK 2.5'},
+            {name: 'UK 3', value:'UK 3'},
+            {name: 'UK 3.5', value:'UK 3.5'},
+            {name: 'UK 4', value:'UK 4'},
+            {name: 'UK 4.5', value:'UK 4.5'},
+            {name: 'UK 5', value:'UK 5'},
+            {name: 'UK 5.5', value:'UK 5.5'},
+            {name: 'UK 6', value:'UK 6'},
+            {name: 'UK 6 (24.5 cm)', value:'UK 6 (24.5 cm)'},
+            {name: 'UK 6.5', value:'UK 6.5'},
+            {name: 'UK 7', value:'UK 7'},
+            {name: 'UK 7.5', value:'UK 7.5'},
+            {name: 'UK 8', value:'UK 8'},
+            {name: 'UK 8.5', value:'UK 8.5'},
+            {name: 'UK 9', value:'UK 9'},
+            {name: 'UK 9.5', value:'UK 9.5'},
+            {name: 'UK 10', value:'UK 10'},
+            {name: 'UK 10.5', value:'UK 10.5'},
+            {name: 'UK 11', value:'UK 11'},
+            {name: 'UK 11.5', value:'UK 11.5'},
+            {name: 'UK 12', value:'UK 12'},
+            {name: 'UK 13', value:'UK 13'},
+            {name: 'UK 14', value:'UK 14'},
+            {name: 'EU 35.5', value:'EU 35.5'},
+            {name: 'EU 36', value:'EU 36'},
+            {name: 'EU 36.5', value:'EU 36.5'},
+            {name: 'EU 37', value:'EU 37'},
+            {name: 'EU 37.5', value:'EU 37.5'},
+            {name: 'EU 38', value:'EU 38'},
+            {name: 'EU 38.5', value:'EU 38.5'},
+            {name: 'EU 39', value:'EU 39'},
+            {name: 'EU 39.5', value:'EU 39.5'},
+            {name: 'EU 40', value:'EU 40'},
+            {name: 'EU 40.5', value:'EU 40.5'},
+            {name: 'EU 41', value:'EU 41'},
+            {name: 'EU 41.5', value:'EU 41.5'},
+            {name: 'EU 42', value:'EU 42'},
+            {name: 'EU 42.5', value:'EU 42.5'},
+            {name: 'EU 43', value:'EU 43'},
+            {name: 'EU 43.5', value:'EU 43.5'},
+            {name: 'EU 44', value:'EU 44'},
+            {name: 'EU 44.5', value:'EU 44.5'},
+            {name: 'EU 45', value:'EU 45'},
+            {name: 'EU 45.5', value:'EU 45.5'},
+            {name: 'EU 46', value:'EU 46'},
+            {name: 'EU 46.5', value:'EU 46.5'},
+            {name: 'EU 47', value:'EU 47'},
+            {name: 'EU 47.5', value:'EU 47.5'},
+            {name: 'EU 48', value:'EU 48'},
+            {name: 'EU 48.5', value:'EU 48.5'},
+            {name: 'EU 49', value:'EU 49'},
+            {name: 'EU 49.5', value:'EU 49.5'},
+            {name: 'EU 50', value:'EU 50'},
+            {name: 'EU 50.5', value:'EU 50.5'},
+            {name: 'EU 51', value:'EU 51'},
+            {name: 'EU 51.5', value:'EU 51.5'},
+            {name: 'EU 52', value:'EU 52'},
+            {name: 'EU 52.5', value:'EU 52.5'},
+            {name: 'US 4', value:'4'},
+            {name: 'US 4.5', value:'4.5'},
+            {name: 'US 5', value:'5'},
+            {name: 'US 5.5', value:'5.5'},
+            {name: 'US 6', value:'6'},
+            {name: 'US 6.5', value:'6.5'},
+            {name: 'US 7', value:'7'},
+            {name: 'US 7.5', value:'7.5'},
+            {name: 'US 8', value:'8'},
+            {name: 'US 8.5', value:'8.5'},
+            {name: 'US 9', value:'9'},
+            {name: 'US 9.5', value:'9.5'},
+            {name: 'US 10', value:'10'},
+            {name: 'US 10.5', value:'10.5'},
+            {name: 'US 11', value:'11'},
+            {name: 'US 11.5', value:'11.5'},
+            {name: 'US 12', value:'12'},
+            {name: 'US 12.5', value:'12.5'},
+            {name: 'US 13', value:'13'},
+            {name: 'US 13.5', value:'13.5'},
+            {name: 'US 14', value:'14'},
+            {name: 'US 14.5', value:'14.5'},
+            {name: 'US 15', value:'15'},
+            {name: 'US 16', value:'16'},
+            {name: 'US 17', value:'17'},
+            {name: 'US 18', value:'18'},
+            {name: 'US 19', value:'19'}
+        ]
+    },
+    {
+        name: 'Offspring',
+        value:'Offspring',
+        subitems: [
+            {name: 'UK 3', value:'3'},
+            {name: 'UK 3.5', value:'3.5'},
+            {name: 'UK 4', value:'4'},
+            {name: 'UK 4.5', value:'4.5'},
+            {name: 'UK 5', value:'5'},
+            {name: 'UK 5.5', value:'5.5'},
+            {name: 'UK 6', value:'6'},
+            {name: 'UK 6.5', value:'6.5'},
+            {name: 'UK 7', value:'7'},
+            {name: 'UK 7.5', value:'7.5'},
+            {name: 'UK 8', value:'8'},
+            {name: 'UK 8.5', value:'8.5'},
+            {name: 'UK 9', value:'9'},
+            {name: 'UK 9.5', value:'9.5'},
+            {name: 'UK 10', value:'10'},
+            {name: 'UK 10.5', value:'10.5'},
+            {name: 'UK 11', value:'11'},
+            {name: 'UK 11.5', value:'11.5'},
+            {name: 'UK 12', value:'12'},
+            {name: 'UK 12.5', value:'12.5'},
+            {name: 'UK 13', value:'13'}
+        ]
+    }, 
+    {
+        name: 'Size?',
+        value:'Size',
+        subitems: [
+            {name: 'UK 3', value:'3'},
+            {name: 'UK 3.5', value:'3.5'},
+            {name: 'UK 4', value:'4'},
+            {name: 'UK 4.5', value:'4.5'},
+            {name: 'UK 5', value:'5'},
+            {name: 'UK 5.5', value:'5.5'},
+            {name: 'UK 6', value:'6'},
+            {name: 'UK 6.5', value:'6.5'},
+            {name: 'UK 7', value:'7'},
+            {name: 'UK 7.5', value:'7.5'},
+            {name: 'UK 8', value:'8'},
+            {name: 'UK 8.5', value:'8.5'},
+            {name: 'UK 9', value:'9'},
+            {name: 'UK 9.5', value:'9.5'},
+            {name: 'UK 10', value:'10'},
+            {name: 'UK 10.5', value:'10.5'},
+            {name: 'UK 11', value:'11'},
+            {name: 'UK 11.5', value:'11.5'},
+            {name: 'UK 12', value:'12'},
+            {name: 'UK 12.5', value:'12.5'},
+            {name: 'UK 13', value:'13'},
+            {name: 'UK 14', value:'14'}
+        ]
+    }, 
+    {
+        name: 'Sneakersnstuff',
+        value:'SNS',
+        subitems: [
+            {name: 'US 3', value:'3'},
+            {name: 'US 3.5', value:'3.5'},
+            {name: 'US 4', value:'4'},
+            {name: 'US 4.5', value:'4.5'},
+            {name: 'US 5', value:'5'},
+            {name: 'US 5.5', value:'5.5'},
+            {name: 'US 6', value:'6'},
+            {name: 'US 6.5', value:'6.5'},
+            {name: 'US 7', value:'7'},
+            {name: 'US 7.5', value:'7.5'},
+            {name: 'US 8', value:'8'},
+            {name: 'US 8.5', value:'8.5'},
+            {name: 'US 9', value:'9'},
+            {name: 'US 9.5', value:'9.5'},
+            {name: 'US 10', value:'10'},
+            {name: 'US 10.5', value:'10.5'},
+            {name: 'US 11', value:'11'},
+            {name: 'US 11.5', value:'11.5'},
+            {name: 'US 12', value:'12'},
+            {name: 'US 12.5', value:'12.5'},
+            {name: 'US 13', value:'13'},
+            {name: 'US 13.5', value:'13.5'},
+            {name: 'US 14', value:'14'},
+            {name: 'US 15', value:'15'},
+            {name: 'US 16', value:'16'},
+            {name: 'US 17', value:'17'},
+            {name: 'US 18', value:'18'}
+        ]
+    },
+    {
+        name: 'Soleheaven',
+        value:'Soleheaven',
+        subitems: [
+            {name: 'UK 3', value:'Size UK: 3'},
+            {name: 'UK 4', value:'Size UK: 4'},
+            {name: 'UK 5', value:'Size UK: 5'},
+            {name: 'UK 5.5', value:'Size UK: 5.5'},
+            {name: 'UK 6', value:'Size UK: 6'},
+            {name: 'UK 6.5', value:'Size UK: 6.5'},
+            {name: 'UK 7', value:'Size UK: 7'},
+            {name: 'UK 7.5', value:'Size UK: 7.5'},
+            {name: 'UK 8', value:'Size UK: 8'},
+            {name: 'UK 8.5', value:'Size UK: 8.5'},
+            {name: 'UK 9', value:'Size UK: 9'},
+            {name: 'UK 9.5', value:'Size UK: 9.5'},
+            {name: 'UK 10', value:'Size UK: 10'},
+            {name: 'UK 10.5', value:'Size UK: 10.5'},
+            {name: 'UK 11', value:'Size UK: 11'},
+            {name: 'UK 11.5', value:'Size UK: 11.5'},
+            {name: 'UK 12', value:'Size UK: 12'},
+            {name: 'UK 12.5', value:'Size UK: 12.5'},
+            {name: 'UK 13', value:'Size UK: 13'},
+            {name: 'UK 13.5', value:'Size UK: 13.5'},
+            {name: 'UK 14', value:'Size UK: 14'},
+            {name: 'UK 14.5', value:'Size UK: 14.5'},
+            {name: 'UK 15', value:'Size UK: 15'}
+        ]
+    },        
+    {
+        name: 'Supreme',
+        value:'Supreme',
+        subitems: [
+            {name: 'UK 6', value:'UK 6'},
+            {name: 'UK 6.5', value:'UK 6.5'},
+            {name: 'UK 7', value:'UK 7'},
+            {name: 'UK 7.5', value:'UK 7.5'},
+            {name: 'UK 8', value:'UK 8'},
+            {name: 'UK 8.5', value:'UK 8.5'},
+            {name: 'UK 9', value:'UK 9'},
+            {name: 'UK 9.5', value:'UK 9.5'},
+            {name: 'UK 10', value:'UK 10'},
+            {name: 'UK 10.5', value:'UK 10.5'},
+            {name: 'UK 11', value:'UK 11'},
+            {name: 'UK 11.5', value:'UK 11.5'},
+            {name: 'UK 12', value:'UK 12'},
+            {name: 'Small', value:'Small'},
+            {name: 'Medium', value:'Medium'},
+            {name: 'Large', value:'Large'},
+            {name: 'Extra Large', value:'XLarge'}
+        ]
+    },
+    {
+        name: 'Well Gosh',
+        value:'WellGosh',
+        subitems: [
+            {name: 'UK 3', value:'UK 3'},
+            {name: 'UK 3.5', value:'UK 3.5'},
+            {name: 'UK 4', value:'UK 4'},
+            {name: 'UK 4.5', value:'UK 4.5'},
+            {name: 'UK 5', value:'UK 5'},
+            {name: 'UK 5.5', value:'UK 5.5'},
+            {name: 'UK 6', value:'UK 6'},
+            {name: 'UK 6.5', value:'UK 6.5'},
+            {name: 'UK 7', value:'UK 7'},
+            {name: 'UK 7.5', value:'UK 7.5'},
+            {name: 'UK 8', value:'UK 8'},
+            {name: 'UK 8.5', value:'UK 8.5'},
+            {name: 'UK 9', value:'UK 9'},
+            {name: 'UK 9.5', value:'UK 9.5'},
+            {name: 'UK 10', value:'UK 10'},
+            {name: 'UK 10.5', value:'UK 10.5'},
+            {name: 'UK 11', value:'UK 11'},
+            {name: 'UK 11.5', value:'UK 11.5'},
+            {name: 'UK 12', value:'UK 12'},
+            {name: 'UK 13', value:'UK 13'}
+        ]
+    }        
+];
+
+/*Creates size picker menus */
+
+$(function(){
+    var temp = {};
+    
+    $.each(brandItems, function(){
+        $("<option />").attr("value", this.value).html(this.name).appendTo("#retailer-picker");
+        temp[this.value] = this.subitems;
+    });
+    
+    $("#retailer-picker").change(function(){
+        var value = $(this).val();
+        var menu = $("#size-picker");
+        
+        menu.empty();
+        $.each(temp[value], function(){
+            $("<option />").attr("value", this.value).html(this.name).appendTo(menu);
+        });
+    });
+      
+});
+
+function onLoad(){
+	var confirmButton = document.getElementById("confirmButton");
+    var logoutButton = document.getElementById("logoutBotButton");
+    var extendButton = document.getElementById("extendButton");
+	/*Do something when user clicks Confirm button*/
+	confirmButton.addEventListener("click", function() {
+
+		var selectSize = document.getElementById('size-picker');
+		var currentSize = selectSize.options[selectSize.selectedIndex].value;
+
+		var selectRetailer = document.getElementById('retailer-picker');
+		var currentRetailer = selectRetailer.options[selectRetailer.selectedIndex].value;
+
+        switch(currentRetailer){
+            case 'Adidas':
+            chrome.storage.local.set({"AdidasSize": currentSize}); //This works to set
+            break;
+            case 'Nike':
+            chrome.storage.local.set({"NikeSize": currentSize}); //This works to set
+            break;
+            case 'FootlockerEU':
+            chrome.storage.local.set({"FootlockerEUSize": currentSize}); //This works to set
+            break;
+            case 'FootlockerUSA':
+            chrome.storage.local.set({"FootlockerUSASize": currentSize}); //This works to set
+            break;
+            case 'Concepts':
+            chrome.storage.local.set({"ConceptsSize": currentSize}); //This works to set
+            break;
+            case 'CrookedTongues':
+            chrome.storage.local.set({"CrookedTonguesSize": currentSize}); //This works to set
+            break;
+            case 'Size':
+            chrome.storage.local.set({"SizeSize": currentSize}); //This works to set
+            break;
+            case 'Footpatrol':
+            chrome.storage.local.set({"FootpatrolSize": currentSize}); //This works to set
+            break;
+            case 'Offspring':
+            chrome.storage.local.set({"OffspringSize": currentSize}); //This works to set
+            break;
+            case 'JDSports':
+            chrome.storage.local.set({"JDSportsSize": currentSize}); //This works to set
+            break;
+            case 'WellGosh':
+            chrome.storage.local.set({"WellGoshSize": currentSize}); //This works to set
+            break;
+            case 'End':
+            chrome.storage.local.set({"EndSize": currentSize}); //This works to set
+            break;
+            case 'SNS':
+            chrome.storage.local.set({"SNSSize": currentSize}); //This works to set
+            break;
+            case 'Soleheaven':
+            chrome.storage.local.set({"SoleheavenSize": currentSize}); //This works to set
+            break;
+            case 'Hanon':
+            chrome.storage.local.set({"HanonSize": currentSize}); //This works to set
+            break;
+            case 'Kith':
+            chrome.storage.local.set({"KithSize": currentSize}); //This works to set
+            break;
+            case 'Supreme':
+            chrome.storage.local.set({"SupremeSize": currentSize}); //This works to set
+            break;
+            case 'ExtraButter':
+            chrome.storage.local.set({"ExtraButterSize": currentSize}); //This works to set
+            break;
+            case 'Bodega':
+            chrome.storage.local.set({"BodegaSize": currentSize}); //This works to set
+            break;
+            /*case '24Kilates':
+            chrome.storage.local.set({"KilatesSize": currentSize}); //This works to set
+            break;*/
+        }
+		chrome.tabs.getSelected(null, function(tab) {
+	        chrome.tabs.sendMessage(tab.id, {retailer: currentRetailer, size: currentSize},
+	            function(response) {
+	            }
+	        );
+    	});
+
+    	window.close();
+
+	});
+
+    logoutButton.addEventListener("click", function(){ //this is just temp for now. will be deleted.
+        chrome.storage.local.clear();
+        window.close();
+    });
+
+    extendButton.addEventListener("click", function(){ //this is just temp for now. will be deleted.
+        //chrome.tabs.create({url: "http://www.snkxch.com/shop/bot"});
+	chrome.tabs.create({url: "http://google.com/"});        
+	window.close();
+    });
+}
+
+function checkIfExpired(storageDate){
+    var d = new Date();
+    if (storageDate < d == true){ return true;}
+    else{return false;}
+}
+
+document.onreadystatechange = function () {
+    if (document.readyState === 'complete') {
+        var loginButton = document.getElementById("loginButton");
+        var signupButton = document.getElementById("signupButton"); 
+        var loginPage = document.getElementById("loginPage");
+        var contentPage = document.getElementById("actualContent");       
+
+        chrome.storage.local.get({"userObject":{}, "expirationDate":{}, "loggedIn":{},}, function(data) {
+             //This works to get
+                    var formattedDate = new Date(data.expirationDate);
+                    var dateToInsert = (formattedDate).getTime();
+                    dateToInsert = new Date(parseInt(dateToInsert));
+                    
+                    if (data.userObject && (checkIfExpired(formattedDate) == false) && (formattedDate != "Invalid Date") && (data.loggedIn == "true")){
+                        //if retrieved data object and the subscription is still in date.
+                        contentPage.style.display = "block";
+                        loginPage.style.display = "none";
+
+                        var newParagraph = document.createElement("a");
+                        newParagraph.href = "#";
+                        newParagraph.innerHTML = '<span class="date" title="'+formattedDate+'" data-livestamp="'+dateToInsert+'"></span>';
+                        document.getElementById("dateExpires").appendChild(newParagraph);
+                        onLoad();
+                    }
+                    else if (data.userObject && (checkIfExpired(formattedDate) == true)){
+                        //if retrieved an object (i.e. user exists) and the subscription has expired.
+                        contentPage.style.display = "none";
+                        loginPage.style.display = "block";
+                        chrome.tabs.create({url: "http://www.snkxch.com/your-account-has-expired/"});
+                        chrome.storage.local.clear();                        
+                    }
+                    else {
+
+                        contentPage.style.display = "none";
+                        loginPage.style.display = "block";
+
+                        loginButton.addEventListener("click", function(){
+                            chrome.tabs.create({url: "http://www.snkxch.com/sneaker-bot-login"});
+                            window.close();
+                        });
+
+                        signupButton.addEventListener("click", function(){
+                            chrome.storage.local.clear();
+                            chrome.tabs.create({url: "http://www.google.com"});
+                            window.close();           
+                        });
+                    }
+        });           
+    }
+}

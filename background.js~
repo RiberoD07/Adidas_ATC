@@ -1,0 +1,13 @@
+var size = '0';
+function requestKey() {
+	var key = prompt("Enter your shoe size:", "");
+	return key;
+}
+chrome.runtime.onInstalled.addListener(function(details) {
+	if(details.reason === 'install' || details.reason === 'update') {
+			size = requestKey();
+			alert(size);
+
+	}
+});
+

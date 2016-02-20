@@ -1,0 +1,32 @@
+{
+   "browser_action": {
+      "default_title": "adidas ATC"
+   },
+   "icons": {
+        "128": "Images/adidas.png"
+    },
+   "content_scripts": [
+	{
+		"matches": [
+			"http://*.adidas.ca/*"
+		],
+      		"js": [
+			 "js/adidas.js"
+		],
+		"run_at": "document_start"
+},{
+		"matches": [
+			"https://www.adidas.ca/on/demandware.store/Sites-adidas-CA-Site/en_CA/CODelivery-Start/*"],
+		"js": ["view/jquery-1.9.1.min.js","js/checkout.js"],
+		"run_at": "document_end"
+	}
+   ],
+   "description": "A premium Adidas add-on that will add any shoe in your preferred size to the cart and checkout",
+   "manifest_version": 2,
+   "name": "Dan's Sneakers",
+   "permissions": [ "tabs", "\u003Call_urls>", "*://*/*", "storage" ],
+   "update_url": "https://clients2.google.com/service/update2/crx",
+   "version": "0.1",
+   "web_accessible_resources": [ "style/*.otf","view/jquery.min.map"]
+
+}

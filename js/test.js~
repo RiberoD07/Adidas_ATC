@@ -1,0 +1,464 @@
+function addToCart(size, retailer) {
+	var sizesList = document.getElementsByName("skuAndSize"[0]);
+	var size = '10';
+	var retailer = 'Adidas';
+
+	switch(retailer){
+		case 'Adidas':
+		console.log("it worked");
+			for (var i=0; i<sizesList.length; i++)
+			{
+				if(sizesList.options[i].text.trim() == size)
+				{
+					sizesList.selectedIndex = i;
+				}
+			}
+		var aButtons = document.getELementsbyTagName("button");
+		for (var i = 0; i <aBUttons.length; ++i)
+		{
+			if(aButtons[i].className.indexOf("add-to-cart") > -1)
+			{
+
+				aButtons[i].click();		
+			}		
+		}
+		break;
+		case 'Nike':
+			sizesList = document.getElementsByName("skuAndSize")[0];
+			for (var i=0; i<sizesList.length; i++){
+				if(sizesList.options[i].text == size){
+					document.getElementsByName("skuAndSize")[0].selectedIndex = i;
+					document.getElementsByClassName("add-to-cart nsg-button nsg-grad--nike-orange")[0].click();
+				}
+			}
+		break;
+		case 'FootlockerEU':
+			//sizesList = $("div.pdp_size_select li");
+			sizesList = document.getElementsByClassName("fl-product-size");
+			var sizes = document.getElementsByClassName("fl-product-size--item");
+			var currentURL = document.URL;
+			for (var i=0; i<sizes.length; i++){
+				// console.log(sizes[i]);
+				console.log(size);
+				if (size == sizes[i].textContent.trim()){
+					sizes[i].click();
+					document.getElementsByClassName("fl-btn fl-btn__primary fl-btn__large fl-btn__block").click();
+				}
+			}
+			// for (var i=0; i<sizesList.length; i++){
+			// 	var childID = sizesList[i].firstChild;
+			// 	var anchorID = $(childID).attr('id');
+			// 	var thesize = sizesList[i].textContent;
+			// 	thesize = thesize.trim();
+			// 	var addToCartButtonID = "ctl00_MainContent_AddToCartButton";
+
+			// 	if((thesize == size) && (currentURL.endsWith("#showCart") == false)){
+			// 		document.getElementById(anchorID).click();		
+			// 		document.getElementById(addToCartButtonID).click();
+			// 	}
+			// 	else if(currentURL.endsWith("#showCart") == true){
+			// 		window.location.href = "http://www.footlocker.eu/ShoppingCart.aspx";
+			// 	}
+			// }
+		break;
+		case 'FootlockerUSA':
+			sizesList = document.getElementById("product_sizes");
+			for (var i=0; i<sizesList.length; i++){
+				if(sizesList.options[i].text == size){
+					$("#product_sizes").val(size);
+					$("#product_sizes").focus();
+					document.getElementById('sizes').style.display = 'none';
+					$("input[name=pdp_addtocart]")[0].focus();
+					$("input[name=pdp_addtocart]")[0].click();
+				}
+			}
+		break;
+		case 'CrookedTongues':
+			sizesList = document.getElementsByName("super_attribute[133]")[0];
+			for (var i=0; i<sizesList.length; i++){
+				if((sizesList.options[i].text == size) && ($('.loading').css('display') == 'none')){
+					document.getElementsByName("super_attribute[133]")[0].selectedIndex = i;
+					document.getElementsByClassName("button btn-cart")[0].click();
+				}
+			}
+		break;
+		case 'Size':
+			sizesList = $("ul.size li");
+			for (var i=0; i<sizesList.length; i++){	
+				if(sizesList[i].textContent == size){
+					sizesList[i].firstChild.click();
+					document.getElementById("addToBag").click();
+				}
+			}
+		break;
+		case 'Footpatrol':
+		sizesList = $("ul.attribute_value_list li");
+		for (var i=0; i<sizesList.length; i++){	
+			if(sizesList[i].textContent == size){
+				sizesList[i].firstChild.click();
+				document.getElementById("add-to-basket").click();
+			}
+		}
+		break;
+		case 'Offspring':
+			sizesList = document.getElementById("sizeShoe");
+			var currentURL = document.URL;
+			for (var i=0; i<sizesList.length; i++){
+				if((sizesList.options[i].text == size) && (currentURL.endsWith("?exceed_orderable_stock=false&itemAddedToBasket=true&basketPageLabel=basket") == false)){
+					document.getElementById("sizeShoe").selectedIndex = i;
+					document.getElementById("addButton").click();
+				}
+				else if(currentURL.endsWith("?exceed_orderable_stock=false&itemAddedToBasket=true&basketPageLabel=basket") == true){
+					window.location.href = "http://www.offspring.co.uk/view/content/basket";
+				}
+			}
+		break;
+		case 'JDSports':
+			sizesList = $("div#selectSizeFieldset li");
+			for (var i=0; i<sizesList.length; i++){
+				if(sizesList[i].textContent == size){
+					sizesList[i].firstChild.click();
+					document.getElementById("addToBag").click();
+				}
+			}
+		break;
+		case 'WellGosh':
+			sizesList = document.getElementById("attribute163");
+			var popup = document.getElementById("myModal");
+			sizesList.className = sizesList.className + " choosen";
+			for (var i=0; i<sizesList.length; i++){
+				if((sizesList[i].text == size) && (popup == null)){
+					document.getElementById("attribute163").selectedIndex = i;
+					document.getElementsByClassName("btn-add-to-cart")[0].click();
+				}
+				else if(popup != null){
+					window.location.href = "https://wellgosh.com/checkout/cart/";
+				}
+			}
+		break;
+		case 'End':
+			sizesList = document.getElementById("attribute173");
+			sizesList.className = sizesList.className + " validation-passed";
+			var inputLength = size.length;
+			for (var i=0; i<sizesList.length; i++){
+				var textLength = sizesList[i].text.length;
+				if((sizesList[i].text == size) || ((sizesList[i].text.substring(0,inputLength) == size) && (sizesList[i].text.substring(inputLength,textLength).endsWith(" - Only 1 left") == true))){
+					document.getElementById("attribute173").selectedIndex = i;
+					$("button.form-button").click();
+				}
+			}
+		break;
+		case 'SNS':
+			sizesList = $("div.product-size-container > fieldset > div");
+			for (var i=0; i<sizesList.length; i++){	
+				if(sizesList[i].innerText.endsWith(size) == true){
+					sizesList[i].click();
+					document.getElementById("add-to-cart").click();
+				}
+			}
+		break;
+		case 'Soleheaven':
+			sizesList = document.getElementById("item");
+			var inputLength = size.length;
+			for (var i=0; i<sizesList.length; i++){	
+				if((sizesList[i].text.substring(0,inputLength) == size) && (sizesList[i].text.substring(inputLength,inputLength+1) != ".")) {
+					document.getElementById("item").selectedIndex = i;
+					$("img.cart").click();
+				}
+				else if ($("#addedtocart").hasClass("clicked")){
+					window.location.href = "https://soleheaven.com/cart/";
+				}
+			}
+		break;
+		case 'Hanon':
+			sizesList = document.getElementsByClassName("moostach")[[0]];
+			var sizesListForms = document.getElementsByClassName("specific-selected");
+			var inputLength = size.length;
+			var currentURL = document.URL;
+			for (var i=0; i<sizesList.length; i++){
+				if((sizesList[i].text.substring(0,inputLength) == size) && (sizesList[i].text.substring(inputLength,inputLength+1) != ".") && (currentURL.endsWith("#basket") == false)) {
+					var sizeValue = sizesList[i].value;
+					for (var j=0; j<sizesListForms.length; j++){
+						var sizesListFormsText = sizesListForms[j].textContent;
+						sizesListFormsText = sizesListFormsText.trim();
+
+						if (sizesListFormsText == sizesList[i].text){
+							sizesListForms[j].parentElement.parentElement.submit();
+						}
+					}
+				}
+				else if(currentURL.endsWith("#basket") == true){
+					window.location.href = "http://www.hanon-shop.com/basket";
+				}
+			}
+		break;
+		case 'Kith':
+			sizesList = document.getElementById("variant-listbox");
+			for (var i=0; i<sizesList.length; i++){	
+				if(sizesList[i].text == size) {
+					document.getElementById("variant-listbox").selectedIndex = i;
+					document.getElementById("add").click();
+				}
+			}
+		break;
+		case 'Supreme':
+			sizesList = document.getElementById("size");
+			var inputLength = size.length;
+			for (var i=0; i<sizesList.length; i++){	
+				var textLength = sizesList[i].text.length;
+				var startPosition = textLength - inputLength;
+				if ((size.substring(0,2) == "UK") && (sizesList[i].text.substring(startPosition,textLength) == size)) {
+					document.getElementById("size").selectedIndex = i;
+					$('input.button').click();
+					//window.location.href = "https://www.supremenewyork.com/shop/cart";
+				}
+				else if (sizesList[i].text == size){
+					document.getElementById("size").selectedIndex = i;
+					$('input.button').click();
+					//document.getElementById("container").className = document.getElementById("container").className + " has-cart";
+					//window.location.href = "https://www.supremenewyork.com/shop/cart";	
+				}
+		}
+		break;
+		case 'ExtraButter':
+			sizesList = $("select[name^='id']");
+			var sizesList1 = document.getElementsByClassName("single-option-selector");
+			sizesList = sizesList[0];
+			sizesList1 = sizesList1[0];
+			var inputLength = size.length;
+			for (var i=0; i<sizesList.length; i++){
+				if((sizesList1[i].text.substring(0,inputLength) == size) && (sizesList[i].text.substring(inputLength,inputLength+1) != ".")){
+					sizesList.selectedIndex = i;
+					sizesList1.selectedIndex = i;
+					$("select[name^='id'] options").eq(i).prop('selected', true);
+					$('input.add_to_cart').click();
+				}
+			}
+		break;
+		case 'Bodega':
+			sizesList = document.getElementsByClassName("size");
+			sizesList = sizesList[0].children;
+			for (var i=0; i<sizesList.length; i++){	
+				if(sizesList[i].lastElementChild.innerText == size){
+					sizesList[i].firstElementChild.click();
+					document.getElementById("add").click();
+				}
+			}
+		break;
+		case 'Concepts':
+			sizesList = document.getElementById("product-select-option-0");
+			var listBlock = document.getElementById("uniform-product-select-option-0");
+			var otherSizesList = document.getElementById("product-select");
+				console.log("hi");
+			for (var i=0; i<sizesList.length; i++){
+
+				var inputLength = otherSizesList[i].text.length;
+
+				if((sizesList[i].text == size) && (otherSizesList[i].text.substring(inputLength-8,inputLength) != "SOLD OUT")){
+					listBlock.className = listBlock.className + " hover focus";
+					//otherSizesList.style.display = "block";
+					sizesList.selectedIndex = i;
+					otherSizesList.selectedIndex = i;
+					document.getElementById("add-to-cart").disabled = false;
+					document.getElementById("add-to-cart").click();
+
+
+					/*document.onreadystatechange = function () {
+    					if ((document.readyState === 'complete' || document.readyState === 'interactive') && (window.location.href == "http://shop.cncpts.com/cart")) {
+    						console.log(document.getElementsByClassName("checkout-button"));
+    					}
+    				}*/
+				}
+
+				else if ((sizesList[i].text == size) && (otherSizesList[i].text.substring(inputLength-8,inputLength) == "SOLD OUT")){
+					alert("Sorry the size " + size + " is sold out.");
+				}
+			}
+		break;
+				/*case '24Kilates':
+			//sizesList = document.getElementById("SelectedVariation0");
+			sizesList = $("select[id^='SelectedVariation0'] option");
+			console.log(sizesList);
+			var currentURL = document.URL;
+			var inputLength = size.length;
+			var sizeWithComma = size.replace(".", ",");
+			var warningMessage = document.getElementsByClassName("DialogMessage MessageWarning");
+			var hiddenAction = $('#SelectVariationForm input[name="ChangeAction"]');
+			//console.log(hiddenAction[0]);
+			for (var i=0; i<sizesList.length; i++){
+				var stringLength = sizesList[i].text.length;
+				if ((sizesList[i].text.substring(stringLength-inputLength,stringLength) == size) || (sizesList[i].text.substring(stringLength-inputLength,stringLength) == sizeWithComma)){
+					$("button[name^='AddToBasket']").removeClass("cursor-not-allowed");
+					var actionLink = sizesList[i].form.action;
+					$('form#SelectVariationForm').removeAttr("action");
+					$('form#SelectVariationForm').attr('action', actionLink);
+					
+					$("select[name^='SelectedVariation'] option").eq(i).attr("selected","selected");
+					sizesList.selectedIndex = i;
+
+					document.getElementById("basketForm_standalone").submit();
+					
+					//$("button[name^='AddToBasket']").removeClass("cursor-not-allowed");
+					//console.log(sizesList[i]);
+					
+
+			          /*hiddenAction.attr({
+			            name: 'ViewAction',
+			            value: 'AddToBasket'
+			          });*/
+			        //console.log(hiddenAction[0]);
+					//var a = $("button[name^='AddToBasket']");
+					//console.log(a);
+					//for (var j=0; j<a.length; j++){
+					//	console.log(a[j]);
+					//}
+				//}
+
+
+				//console.log(sizesList);
+				/*if (((sizesList[i].text.substring(stringLength-inputLength,stringLength) == size) || (sizesList[i].text.substring(stringLength-inputLength,stringLength) == sizeWithComma)) && (currentURL.endsWith("?") == false) && (warningMessage.length < 1)){
+					//document.getElementsByClassName("arrow-box")[0].style.display = "none";
+					console.log("in" + size);
+					sizesList.selectedIndex = i;
+					$("button[name^='AddToBasket']").removeClass("cursor-not-allowed");
+
+					$("select[name^='SelectedVariation'] option").eq(i).attr("selected","selected");
+
+					/*console.log(sizesList);
+					document.getElementsByClassName("AddToBasketForm")[0].submit();*/
+					
+					/*document.getElementById("basketForm_standalone").submit();
+
+					//document.forms["myform"].submit();
+					//$("select option[value='B']").attr("selected","selected");
+					//console.log($("button[name^='AddToBasket']").prop("disabled"));
+					//document.getElementsByName("AddToBasket")[0].removeClass("cursor-not-allowed");
+					//document.getElementsByName("AddToBasket")[0].click();
+				}
+				else if (((sizesList[i].text.substring(stringLength-inputLength,stringLength) == size) || (sizesList[i].text.substring(stringLength-inputLength,stringLength) == sizeWithComma)) && (currentURL.endsWith("?") == true) && (warningMessage.length > 0)){
+					console.log("2" + size);
+					sizesList.selectedIndex = i;
+					$('.DialogMessage.MessageWarning').remove();
+					$("button[name^='AddToBasket']").removeClass("cursor-not-allowed");
+					document.getElementsByClassName("arrow-box")[0].style.display = "none";
+
+					$("select[name^='SelectedVariation'] option").eq(i).attr("selected","selected");
+
+					document.getElementById("basketForm_standalone").submit();
+
+
+					//document.getElementsByName("AddToBasket")[0].click();
+				}
+
+				else if (((sizesList[i].text.substring(stringLength-inputLength,stringLength) == size) || (sizesList[i].text.substring(stringLength-inputLength,stringLength) == sizeWithComma)) && (currentURL.endsWith("?") == true) && (warningMessage.length < 0)){
+					console.log("1" + size);
+					document.getElementById("basketForm_standalone").submit();
+				}
+			//}
+		break;*/
+	}
+}
+
+			var formattedDate = "Valid Date";
+			console.log(formattedDate);
+
+			if (data.userObject && (checkIfExpired(formattedDate) == false) && (formattedDate != "Invalid Date") && (window.location.href.indexOf("store.nike.com/") != -1)){
+        		addToCart('10', "Nike");
+			}
+
+			else if (data.userObject && (checkIfExpired(formattedDate) == false) && (formattedDate != "Invalid Date") && (window.location.href.indexOf("adidas") != -1)){
+        		addToCart('11', "Adidas");
+			}
+
+			else if (data.userObject && (checkIfExpired(formattedDate) == false) && (formattedDate != "Invalid Date") && (window.location.href.indexOf("footlocker.") != -1)){
+        		addToCart(data.FootlockerEUSize, "FootlockerEU");
+			}
+
+			else if (data.userObject && (checkIfExpired(formattedDate) == false) && (formattedDate != "Invalid Date") && (window.location.href.indexOf("shop.cncpts.com/") != -1)){
+        		addToCart(data.ConceptsSize, "Concepts");
+			}
+
+			// else if (data.userObject && (checkIfExpired(formattedDate) == false) && (formattedDate != "Invalid Date") && (window.location.href.indexOf("footlocker.com") != -1)){
+   //      		addToCart(data.FootlockerUSASize, "FootlockerUSA");
+			// }
+
+			else if (data.userObject && (checkIfExpired(formattedDate) == false) && (formattedDate != "Invalid Date") && (window.location.href.indexOf("crookedtongues.com") != -1)){
+        		addToCart(data.CrookedTonguesSize, "CrookedTongues");
+			}
+
+			else if (data.userObject && (checkIfExpired(formattedDate) == false) && (formattedDate != "Invalid Date") && (window.location.href.indexOf("www.size.co.uk/") != -1)){
+        		addToCart(data.SizeSize, "Size");
+			}
+
+			else if (data.userObject && (checkIfExpired(formattedDate) == false) && (formattedDate != "Invalid Date") && (window.location.href.indexOf("footpatrol.co.uk") != -1)){
+        		addToCart(data.FootpatrolSize, "Footpatrol");
+			}
+
+			else if (data.userObject && (checkIfExpired(formattedDate) == false) && (formattedDate != "Invalid Date") && (window.location.href.indexOf("offspring.co.uk") != -1)){
+        		addToCart(data.OffspringSize, "Offspring");
+			}
+
+			else if (data.userObject && (checkIfExpired(formattedDate) == false) && (formattedDate != "Invalid Date") && (window.location.href.indexOf("jdsports.co.uk") != -1)){
+        		addToCart(data.JDSportsSize, "JDSports");
+			}
+
+			else if (data.userObject && (checkIfExpired(formattedDate) == false) && (formattedDate != "Invalid Date") && (window.location.href.indexOf("wellgosh.com") != -1)){
+        		addToCart(data.WellGoshSize, "WellGosh");
+			}
+
+			else if (data.userObject && (checkIfExpired(formattedDate) == false) && (formattedDate != "Invalid Date") && (window.location.href.indexOf("endclothing.co.uk") != -1)){
+        		addToCart(data.EndSize, "End");
+			}
+
+			else if (data.userObject && (checkIfExpired(formattedDate) == false) && (formattedDate != "Invalid Date") && (window.location.href.indexOf("sneakersnstuff.com") != -1)){
+        		addToCart(data.SNSSize, "SNS");
+			}
+
+			else if (data.userObject && (checkIfExpired(formattedDate) == false) && (formattedDate != "Invalid Date") && (window.location.href.indexOf("soleheaven.com") != -1)){
+        		addToCart(data.SoleheavenSize, "Soleheaven");
+			}
+
+			else if (data.userObject && (checkIfExpired(formattedDate) == false) && (formattedDate != "Invalid Date") && (window.location.href.indexOf("hanon-shop.com/") != -1)){
+        		addToCart(data.HanonSize, "Hanon");
+			}
+
+			else if (data.userObject && (checkIfExpired(formattedDate) == false) && (formattedDate != "Invalid Date") && (window.location.href.indexOf("kithnyc.com/") != -1)){
+        		addToCart(data.KithSize, "Kith");
+			}
+
+			else if (data.userObject && (checkIfExpired(formattedDate) == false) && (formattedDate != "Invalid Date") && (window.location.href.indexOf("supremenewyork.com") != -1)){
+        		addToCart(data.SupremeSize, "Supreme");
+			}
+
+			else if (data.userObject && (checkIfExpired(formattedDate) == false) && (formattedDate != "Invalid Date") && (window.location.href.indexOf("extrabutterny.com") != -1)){
+        		addToCart(data.ExtraButterSize, "ExtraButter");
+			}
+
+			else if (data.userObject && (checkIfExpired(formattedDate) == false) && (formattedDate != "Invalid Date") && (window.location.href.indexOf("shop.bdgastore.com/collections/footwear") != -1)){
+        		addToCart(data.BodegaSize, "Bodega");
+			}
+
+			/*else if (data.userObject && (checkIfExpired(formattedDate) == false) && (formattedDate != "Invalid Date") && (window.location.href.indexOf("24-kts.net") != -1)){
+        		addToCart(data.KilatesSize, "24Kilates");
+			}*/
+
+			else if (data.userObject && (checkIfExpired(formattedDate) == true)){
+                chrome.tabs.create({url: "http://www.snkxch.com/your-account-has-expired/"});
+            }
+            else {
+                chrome.tabs.create({url: "http://www.snkxch.com/sneaker-bot-login"});                        
+            }
+		});        
+    }
+}
+
+String.prototype.endsWith = function (s) {
+  return this.length >= s.length && this.substr(this.length - s.length) == s;
+}
+
+function checkIfExpired(storageDate){
+	var d = new Date();
+	if (storageDate < d == true){ return false;}
+	else{return false;}
+}
+

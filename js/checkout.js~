@@ -1,0 +1,48 @@
+$(function() {
+	chrome.extension.sendMessage({
+		method: 'get'
+	}, function(res) {
+			function fillInfo() {
+				console.log("billing info");
+				document.getElementById("dwfrm_delivery_singleshipping_shippingAddress_addressFields_firstName").value = "Daniel";
+				document.getElementById("dwfrm_delivery_singleshipping_shippingAddress_addressFields_lastName").value = "Ribero";
+document.getElementById("dwfrm_delivery_singleshipping_shippingAddress_addressFields_address1").value = "10 Bonavem Dr.";
+document.getElementById("dwfrm_delivery_singleshipping_shippingAddress_addressFields_city").value = "St.Catharines";
+document.getElementById("dwfrm_delivery_singleshipping_shippingAddress_addressFields_countyProvince").value = "ON";//ontario
+document.getElementById("dwfrm_delivery_singleshipping_shippingAddress_addressFields_zip").value = "L2N 1X8";
+document.getElementById("dwfrm_delivery_singleshipping_shippingAddress_email_emailAddress").value = "danielribero07@hotmail.com";
+document.getElementById("dwfrm_delivery_singleshipping_shippingAddress_ageConfirmation").checked=true;
+//window.location.href = "https://www.paypal.com/cgi-bin/webscr?useraction=continue&cmd=_express-checkout&token=EC-4H541641KH798620S#/checkout/login";
+console.log("click button");
+document.getElementById("dwfrm_delivery_singleshipping_shippingAddress_addressFields_phone").value = "2899903435";
+
+//document.getElementById("clickcollect-cp-pickup").click();
+//document.getElementsByName("dwfrm_cart_checkoutShortcutPaypal")[0].click();
+//document.forms[0].submit();
+//document.getElementsByTagName('button')[0].click();
+//document.getElementsByTagName('input')[1].click();
+//window.location.href = "https://www.adidas.ca/on/demandware.store/Sites-adidas-CA-Site/en_CA/COSummary-Start";
+//setTimeout(document.getElementById("email").value = "danielribero07@hotmail.com",5000);
+
+
+				/*$('#order_billing_name').val(res.fn);
+				$('#order_email').val(res.email);
+				$('#order_tel').val(res.phone);
+				$('#order_billing_address').val(res.adr);
+				$('#order_billing_city').val(res.city);
+				$('#order_billing_zip').val(res.zip);
+				$('#order_billing_country').val(res.country);
+				$('#order_billing_state').val(res.state);
+				
+				$('#credit_card_type').val(res.cct);
+				$('#credit_card_number').val(res.ccn);
+				$('#credit_card_month').val(res.ccm);
+				$('#credit_card_year').val(res.ccy);
+				$('#credit_card_verification_value').val(res.ccv);
+				
+				$('#order_terms').prop('checked', true);
+				$('.checkout').click();
+			*/}
+			setInterval(fillInfo, 300);
+	});
+});

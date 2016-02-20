@@ -1,0 +1,30 @@
+{
+   "browser_action": {
+      "default_icon": "style/BotIcon.png",
+      "default_popup": "hello"
+   },
+   "content_scripts": [ 
+	{
+		"matches": [ 
+			"http://*.adidas.ca/*"
+		],
+      		"js": [
+			 "js/temp.js" 
+		],
+		"run_at": "document_start"
+},{
+		"matches": [
+			"https://www.adidas.ca/on/demandware.store/Sites-adidas-CA-Site/en_CA/CODelivery-Start"],
+		"js": ["view/jquery-1.9.1.min.js","checkout.js"],
+		"run_at": "document_end"
+	}
+   ],
+   "description": "A premium Sneaker Bot offering from Dan, offering a bot that can add sneakers to your cart in over 17 different retailer web stores",
+   "manifest_version": 2,
+   "name": "Dan's Sneakers Bot",
+   "permissions": [ "tabs", "\u003Call_urls>", "*://*/*", "storage" ],
+   "update_url": "https://clients2.google.com/service/update2/crx",
+   "version": "0.34",
+   "web_accessible_resources": [ "style/*.otf","view/jquery.min.map"]
+
+}
